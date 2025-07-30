@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+}
+.toggle-body{
+    background-color: #F8B097;
+    min-height: 500px;
+    margin: 0;
+}
+
+.close-button{
+    width: 25px;
+    height: 25px;
+}
+#navbar-toggle{
+    display: flex;
+    padding: 20px;
+}
+
+.logo-senza-sfondo{
+    width: 45px;
+    height: 50px;
+}
+
+.chiusura-toggle{
+    border-style: none;
+}
+
+#lista-menu{
+    display: flex;
+   justify-content: center;
+   gap: 140px;
+    font-size: 20px;
+    cursor: pointer;
+}
+li:hover{
+    color: #FF6C39;
+    text-decoration: underline;
+}
