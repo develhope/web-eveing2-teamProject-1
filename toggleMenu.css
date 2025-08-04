@@ -2,7 +2,7 @@ body{
     margin: 0;
 }
 .toggle-body{
-    background-color: #F8B097;
+    background-color: #f9d0c3;
     min-height: 500px;
     margin: 0;
 }
@@ -10,10 +10,15 @@ body{
 .close-button{
     width: 25px;
     height: 25px;
+    margin: 10px 20px;
 }
-#navbar-toggle{
+.navbar-toggle{
     display: flex;
     padding: 20px;
+    justify-content: space-between;
+}
+.logo-title-toggle{
+    display: flex;
 }
 
 .logo-senza-sfondo{
