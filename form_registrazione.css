@@ -68,7 +68,7 @@ input:focus {
   display: flex;
   justify-content: center;
 }
-button[type="registrati"] {
+button[type="submit"] {
   padding: 12px 30px;
   font-size: 16px;
   font-weight: 500;
