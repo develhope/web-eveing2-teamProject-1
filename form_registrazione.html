@@ -4,40 +4,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="form_registrazione.css" />
 
     <title>Travel Routes</title>
   </head>
 
   <body>
-    <h1>Registrazione</h1>
     <form action="#">
-      <h2>Nome</h2>
-      <label for="name"></label>
-      <input type="text" name="name" id="name" required />
+      <h1>Registrazione</h1>
 
-      <h2>Cognome</h2>
-      <label for="surname"></label>
-      <input type="text" name="surname" id="name" required />
+      <div class="form-grid">
+        <div>
+          <label for="name">Nome</label>
+          <input type="text" name="name" id="name" required />
+        </div>
 
-      <h2>E-mail</h2>
-      <label for="email"></label>
-      <input type="email" name="email" required />
+        <div>
+          <label for="surname">Cognome</label>
+          <input type="text" name="surname" id="name" required />
+        </div>
 
-      <h2>Data di nascita</h2>
-      <label for="birth"></label>
-      <input type="date" name="birth" id="birth" required />
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+        </div>
 
-      <h2>Password</h2>
-      <label for="password"></label>
-      <input type="password" name="password" required />
+        <div>
+          <label for="birth">Data di nascita</label>
+          <input type="date" name="birth" id="birth" required />
+        </div>
 
-      <h2>Conferma password</h2>
-      <label for="confirm"></label>
-      <input type="confirm" name="confirm" required />
-      
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password " required />
+        </div>
 
-      <button type="registrati">Registrati</button>
+        <div>
+          <label for="confirm">Conferma password</label>
+          <input type="password" name="confirm" id="confirm" required />
+        </div>
+      </div>
+
+      <div>
+        <p class="terms">
+          Creando un account accetti le nostre condizioni su
+          <a href="#">Termini e Privacy</a>.
+        </p>
+      </div>
+
+      <div class="form-footer">
+        <button type="registrati">Registrati</button>
+      </div>
     </form>
   </body>
-</html>
 </html>
