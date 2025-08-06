@@ -1,0 +1,60 @@
+/*dropdown login*/
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  width: 220px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+.hidden {
+  display: none;
+}
+.dropdown h3 {
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+}
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f4a28c;
+}
+.button_group {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 5px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+button {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 10px;
+  background-color: #ff6b35;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 999px;
+}
+.button_group a {
+  text-decoration: underline;
+  color: #ff6b35;
+  text-align: center;
+}

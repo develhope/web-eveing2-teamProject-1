@@ -4,21 +4,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="form_login.css" />
 
     <title>Travel Routes</title>
   </head>
 
   <body>
-    <h1>Login</h1>
-    <form action="#">
-      <h2>E-mail</h2>
-      <label for="email"></label>
-      <input type="email" name="email" required />
-      <h2>Password</h2>
-      <label for="password"></label>
-      <input type="password" name="password" required />
-      <button type="accedi">Accedi</button>
-      <button type="registrati">Registrati</button>
-    </form>
+    <!-- Navbar finta -->
+    <nav class="navbar">
+      <div style="flex-grow: 1"></div>
+      <button id="userIcon" class="icon-button">👤</button>
+    </nav>
+
+    <div id="loginDropdown" class="dropdown hidden">
+      <h3>Login</h3>
+      <form>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+
+        <div class="button_group">
+          <button type="button">Accedi</button>
+          <a href="#">Registrati</a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const userIcon = document.getElementById("userIcon");
+      const loginDropdown = document.getElementById("loginDropdown");
+
+      userIcon.addEventListener("click", () => {
+        loginDropdown.classList.toggle("hidden");
+      });
+
+      window.addEventListener("click", (e) => {
+        if (!loginDropdown.contains(e.target) && !userIcon.contains(e.target)) {
+          loginDropdown.classList.add("hidden");
+        }
+      });
+    </script>
   </body>
 </html>
