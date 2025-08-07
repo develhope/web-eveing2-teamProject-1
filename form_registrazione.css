@@ -40,11 +40,11 @@ input {
   padding: 12px 15px;
   border: none;
   border-radius: 999px;
-  background-color: #f8d9ce;
+  background-color: #f8b097;
   font-size: 16px;
 }
 input:focus {
-  outline: 2px solid #ff7a33;
+  outline: 2px solid #ff855b;
   background-color: #fff2ed;
 }
 /*paragrafo condizioni*/
@@ -54,7 +54,7 @@ input:focus {
   color: black;
 }
 .terms a {
-  color: #ff6b2d;
+  color: #ff855b;
   text-decoration: none;
 }
 .terms a:hover {
@@ -72,7 +72,7 @@ button[type="submit"] {
   padding: 12px 30px;
   font-size: 16px;
   font-weight: 500;
-  background-color: #ff6b2d;
+  background-color: #ff855b;
   color: white;
   border: none;
   border-radius: 999px;
@@ -82,7 +82,7 @@ button[type="submit"] {
   letter-spacing: 0.5px;
 }
 button[type="submit"]:hover {
-  background-color: #e65c20;
+  background-color: #ff855b;
 }
 
 /* Responsivo per schermi piccoli */

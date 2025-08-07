@@ -31,7 +31,7 @@ input[type="password"] {
   margin-top: 8px;
   border: none;
   border-radius: 20px;
-  background-color: #f4a28c;
+  background-color: #f8b097;
 }
 .button_group {
   display: flex;
@@ -46,7 +46,7 @@ button {
   padding: 6px 12px;
   font-size: 12px;
   border-radius: 10px;
-  background-color: #ff6b35;
+  background-color: #ff855b;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -55,6 +55,6 @@ button {
 }
 .button_group a {
   text-decoration: underline;
-  color: #ff6b35;
+  color: #ff855b;
   text-align: center;
 }
