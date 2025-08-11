@@ -85,7 +85,7 @@ button[type="submit"]:hover {
   background-color: #ff855b;
 }
 
-/* Responsivo per schermi piccoli */
+/* Responsive */
 @media (max-width: 600px) {
   .form-grid {
     grid-template-columns: 1fr;
