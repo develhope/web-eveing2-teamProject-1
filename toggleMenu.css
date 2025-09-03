@@ -1,0 +1,43 @@
+.toggle-body{
+    background-color: #f9d0c3;
+    min-height: 500px;
+    /*width: fit-content; DA PROVARE NELLA MEDIA QUERY MOBILE*/ 
+    margin: 0;
+}
+
+.close-button{
+    width: 25px;
+    height: 25px;
+    margin: 10px 20px;
+    cursor: pointer;
+}
+.navbar-toggle{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+.logo-title-toggle{
+    display: flex;
+}
+
+.logo-senza-sfondo{
+    width: 45px;
+    height: 50px;
+}
+
+.chiusura-toggle{
+    border-style: none;
+}
+
+#lista-menu{
+    display: flex;
+   justify-content: center;
+   gap: 140px;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1.6;
+}
+li:hover{
+    color: #FF6C39;
+    text-decoration: underline;
+}

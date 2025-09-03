@@ -1,0 +1,57 @@
+@media only screen and (max-width: 1200px) {
+  .carousel {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .carousel {
+    flex-wrap: wrap;
+  }
+}
+.carousel {
+  display: flex;
+  gap: 80px; /* spazio tra le card */
+  padding: 20px;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 200px;
+  max-width: 300px;
+}
+.card.van {
+  background-image: url(/immagini/van.jpg);
+}
+
+.card.states {
+  background-image: url(/immagini/states.jpg);
+}
+
+.card.island {
+  background-image: url(/immagini/island.jpg);
+}
+
+.card.europe {
+  background-image: url(/immagini/europe.jpg);
+}
+
+.card-text {
+  position: absolute;
+  bottom: 0px;
+  height: 30px;
+  width: 305px;
+  left: 4px;
+  border-radius: 30px;
+  background: rgba(0, 123, 123, 0.6);
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
