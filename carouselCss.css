@@ -1,13 +1,9 @@
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1500px) {
   .carousel {
     flex-wrap: wrap;
   }
 }
-@media only screen and (min-width: 1200px) {
-  .carousel {
-    flex-wrap: wrap;
-  }
-}
+
 .carousel {
   display: flex;
   gap: 80px; /* spazio tra le card */
@@ -45,7 +41,7 @@
   position: absolute;
   bottom: 0px;
   height: 30px;
-  width: 305px;
+  width: 290px;
   left: 4px;
   border-radius: 30px;
   background: rgba(0, 123, 123, 0.6);
