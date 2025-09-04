@@ -4,6 +4,12 @@
   }
 }
 
+.titleCarousel {
+  padding: 20px 0px 20px 0px;
+  justify-content: center;
+  display: flex;
+  font-size: 32px;
+}
 .carousel {
   display: flex;
   gap: 80px; /* spazio tra le card */
