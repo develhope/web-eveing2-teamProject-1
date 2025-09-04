@@ -32,10 +32,42 @@ body {
   font-size: 1.8rem;
   font-weight: 600;
 }
+.preferiti-btn {
+  background-color: white;
+  color: var(--accent);
+  font-weight: 600;
+  border: 2px solid var(--accent);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.preferiti-btn .fa-regular {
+  color: white;
+  text-shadow: 0 0 2px var(--accent), 0 0 2px var(--accent);
+}
+.preferiti-btn:hover {
+  background-color: var(--accent);
+  color: white;
+}
+.preferiti-btn:hover {
+  background-color: var(--accent);
+  color: white;
+}
+.preferiti-btn .fa-solid {
+  color: red;
+}
 .titolo i {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--accent);
   cursor: pointer;
+}
+.preferiti-btn .fa-solid {
+  color: red;
 }
 .info-cards {
   display: flex;
@@ -69,7 +101,7 @@ body {
 .map-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--gap);
   padding: 0 20px;
   max-width: var(--container-w);
@@ -134,7 +166,6 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 30px;
-  padding: 40px 0;
   justify-items: space-between;
 }
 .map-box {
@@ -174,83 +205,92 @@ body {
 .cosa-include i {
   color: var(--accent);
 }
-/*responsive*/
-
-@media (max-width: 1024px) {
-  .info-cards {
-    gap: 40px;
-  }
-
-  .descrizione,
-  .tour,
-  .map-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .side-image,
-  .map-image {
-    justify-content: center;
-  }
-
-  .side-image img,
-  .map-image img {
-    max-width: 100%;
-  }
-
-  .map-box,
-  .cosa-include {
-    width: 100%;
-  }
+.itinerario-giorni {
+  max-width: var(--container-w);
+  margin: 60px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
-
-@media (max-width: 768px) {
-  .titolo {
+.giorni-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.giorni-tabs .tab {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+  color: var(--accent);
+  font-weight: 600;
+}
+.giorni-tabs .tab.attivo,
+.giorni-tabs .tab:hover {
+  background: var(--accent);
+  color: white;
+}
+.attivita-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.attivita-card img {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.attivita-card .text h3 {
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  color: #333;
+}
+/*responsive*/
+@media (max-width: 1024px) {
+  .attivita-card {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
   }
-
-  .info-cards {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .galleria {
-    padding: 0 10px;
-  }
-
-  .panorami {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-  }
-
-  .descrizione,
-  .tour,
-  .map-container {
-    padding: 0 10px;
+  .attivita-card img {
+    width: 100%;
+    height: 180px;
   }
 }
-
+@media (max-width: 768px) {
+  .giorni-tabs {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .giorni-tabs .tab {
+    flex: 1 1 40%;
+    text-align: center;
+  }
+  .attivita-card {
+    gap: 10px;
+    padding: 12px;
+  }
+}
 @media (max-width: 480px) {
-  body {
-    font-size: 0.95rem;
+  .giorni-tabs .tab {
+    flex: 1 1 100%;
+    font-size: 0.9rem;
+    padding: 8px 10px;
   }
-
-  .titolo h1 {
-    font-size: 1.4rem;
+  .attivita-card img {
+    height: 150px;
   }
-
-  .info-cards .card {
-    font-size: 0.95rem;
-    padding: 10px 12px;
+  .attivita-card .text h3 {
+    font-size: 1rem;
   }
-
-  .tour ul {
-    padding-left: 15px;
-  }
-
-  .map-box {
-    height: 250px;
+  .attivita-card .text p {
+    font-size: 0.9rem;
   }
 }

@@ -22,7 +22,10 @@
 
     <section class="titolo">
       <h1>Itinerario in Costiera Amalfitana</h1>
-      <i class="fa-regular fa-heart"></i>
+      <button class="preferiti-btn" id="preferitiBtn">
+        <i class="fa-regular fa-heart" id="cuoreIcona"></i> Aggiungi ai
+        preferiti
+      </button>
     </section>
 
     <section class="info-cards">
@@ -51,6 +54,12 @@
           al mondo. Durante il tour visiteremo le località più iconiche, tra
           limoneti profumati, mare cristallino e scorci indimenticabili.
         </p>
+        <p>
+          Ogni giorno sarà un’immersione tra borghi caratteristici e panorami da
+          sogno che resteranno impressi nella memoria. Assaporerai piatti tipici
+          preparati con ingredienti locali e scoprirai tradizioni autentiche,
+          per un’esperienza che unisce cultura, natura e gusto.
+        </p>
       </div>
       <div class="side-image">
         <img
@@ -59,41 +68,110 @@
         />
       </div>
     </section>
-
-    <section class="tour">
+    <section class="itinerario-giorni">
       <div class="text">
-        <h2>Il Tour in breve</h2>
+        <h2>Itinerario giornaliero</h2>
         <p>
           Un’esperienza di 5 giorni tra Amalfi, Positano e i borghi circostanti,
           con tempo libero per rilassarsi in spiaggia, degustare specialità
           locali e vivere la magia della Costiera.
         </p>
-        <h3>Itinerario giornaliero</h3>
-        <ul>
-          <li>
-            <b>Giorno 1 | Amalfi</b> - Arrivo, visita del centro storico e relax
-            sul lungomare.
-          </li>
-          <li>
-            <b>Giorno 2 | Ravello</b> -Escursione ai giardini di Villa Rufolo e
-            Villa Cimbrone, panorami spettacolari.
-          </li>
-          <li>
-            <b>Giorno 3 | Pompei</b> - Gita guidata tra le antiche rovine
-            romane.
-          </li>
-          <li>
-            <b>Giorno 4 | Positano</b> - Passeggiata tra vicoli pittoreschi e
-            tempo libero in spiaggia.
-          </li>
-          <li>
-            <b>Giorno 5 | Sorrento</b> - Esplorazione del centro storico e
-            partenza.
-          </li>
-        </ul>
-      </div>
-      <div class="side-image">
-        <img src="immagini/mappatouramalfi.jpg" alt="Mappa tour Amalfi" />
+        <div class="giorni-tabs">
+          <button class="tab attivo" data-giorno="1">Giorno 1</button>
+          <button class="tab" data-giorno="2">Giorno 2</button>
+          <button class="tab" data-giorno="3">Giorno 3</button>
+          <button class="tab" data-giorno="4">Giorno 4</button>
+          <button class="tab" data-giorno="5">Giorno 5</button>
+        </div>
+        <!-- Giorno 1 -->
+        <div class="giorno" id="giorno-1">
+          <div class="attivita-card">
+            <img src="immagini/amalfi.png" alt="Amalfi" />
+            <div class="text">
+              <h3>Amalfi: tra storia e mare</h3>
+              <p>
+                L’arrivo ad Amalfi segna l’inizio di un viaggio indimenticabile.
+                Passeggiando tra le stradine medievali del centro storico, si
+                percepisce la storia che permea ogni angolo, dai piccoli vicoli
+                ai caffè affacciati sul mare. Il Duomo domina la piazza
+                principale con la sua imponente facciata e invita a scoprire la
+                ricchezza artistica e culturale della città. La brezza marina e
+                i colori vivaci degli edifici rendono questo primo contatto con
+                la Costiera un’esperienza avvolgente e suggestiva.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Giorno 2 -->
+        <div class="giorno" id="giorno-2">
+          <div class="attivita-card">
+            <img src="immagini/ravello.jpg" alt="Ravello" />
+            <div class="text">
+              <h3>Ravello: giardini sospesi sul mare</h3>
+              <p>
+                A Ravello i celebri giardini di Villa Rufolo e Villa Cimbrone
+                offrono panorami che sembrano dipinti. Tra fiori profumati e
+                viali ombreggiati, ogni angolo regala scorci sul mare
+                scintillante sottostante. Passeggiare qui significa lasciarsi
+                avvolgere da un’atmosfera romantica e contemplativa, mentre la
+                vista sulla Costiera Amalfitana si apre davanti agli occhi in
+                tutta la sua maestosità.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Giorno 3 -->
+        <div class="giorno" id="giorno-3">
+          <div class="attivita-card">
+            <img src="immagini/pompei.jpg" alt="Pompei" />
+            <div class="text">
+              <h3>Pompei: un tuffo nel passato</h3>
+              <p>
+                La visita a Pompei è un viaggio nel tempo: camminare tra le
+                antiche strade lastricate e ammirare le rovine di templi, teatri
+                e ville permette di immaginare la vita quotidiana di secoli fa.
+                Una guida esperta accompagna tra dettagli e curiosità che
+                rendono viva la storia di questa città straordinariamente
+                conservata, facendo emergere l’emozione di fronte a
+                testimonianze millenarie.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Giorno 4 -->
+        <div class="giorno" id="giorno-4">
+          <div class="attivita-card">
+            <img src="immagini/positano.jpg" alt="Positano" />
+            <div class="text">
+              <h3>Positano: tra vicoli e mare</h3>
+              <p>
+                Positano incanta con le sue casette colorate che sembrano
+                arrampicarsi sulla roccia. Passeggiare tra i vicoli pieni di
+                negozi artigianali e caffè pittoreschi è un piacere per i sensi.
+                Il tempo libero in spiaggia permette di rilassarsi ascoltando il
+                mare, godendo dei panorami mozzafiato e assaporando appieno
+                l’atmosfera unica di questa perla della Costiera Amalfitana.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Giorno 5 -->
+        <div class="giorno" id="giorno-5">
+          <div class="attivita-card">
+            <img src="immagini/sorrento.jpg" alt="Sorrento" />
+            <div class="text">
+              <h3>Sorrento: sapori e addii</h3>
+              <p>
+                L’ultimo giorno a Sorrento offre un mix di sapori e panorami.
+                Passeggiare tra il centro storico significa scoprire botteghe e
+                laboratori artigianali, mentre il profumo di limoncello e dolci
+                tipici riempie l’aria. È il momento di assaporare fino
+                all’ultimo la magia della Costiera, conservando nel cuore
+                ricordi indimenticabili e la promessa di tornare.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -137,5 +215,67 @@
         </ul>
       </div>
     </div>
+
+    <section class="tour">
+      <div class="text">
+        <h2>La storia di Amalfi</h2>
+        <p>
+          Amalfi, una delle antiche repubbliche marinare d’Italia, vanta una
+          storia millenaria fatta di navigazione, commercio e arte. Tra l’XI e
+          il XIII secolo divenne un importante centro mediterraneo, famoso per
+          la sua flotta e i mercanti coraggiosi.
+        </p>
+        <p>
+          Il Duomo di Sant’Andrea, con le sue influenze arabe e normanne, domina
+          il centro storico, mentre vicoli e piazze raccontano storie di marinai
+          e mercanti. La leggenda narra che i marinai portassero con sé reliquie
+          del Santo Patrono per protezione durante le tempeste.
+        </p>
+        <p>
+          Passeggiare ad Amalfi significa vivere un mix unico di storia,
+          tradizione marittima e panorami mozzafiato sulla Costiera.
+        </p>
+        <p>
+          Ancora oggi, Amalfi conserva il fascino di un tempo: tra vicoli,
+          botteghe e antichi arsenali, il passato si respira in ogni angolo. La
+          celebre carta amalfitana e le tradizioni artigiane raccontano una
+          storia che continua a vivere.
+        </p>
+      </div>
+      <div class="side-image">
+        <img src="immagini/mappatouramalfi.jpg" alt="Mappa tour Amalfi" />
+      </div>
+    </section>
+    <script>
+      const tabs = document.querySelectorAll(".giorni-tabs .tab");
+      const giorni = document.querySelectorAll(".giorno");
+
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("attivo"));
+          tab.classList.add("attivo");
+          giorni.forEach((g) => (g.style.display = "none"));
+          document.getElementById("giorno-" + (i + 1)).style.display = "block";
+        });
+      });
+      // Mostra solo Giorno 1 all’avvio
+      giorni.forEach((g, i) => (g.style.display = i === 0 ? "block" : "none"));
+
+      const preferitiBtn = document.getElementById("preferitiBtn");
+      const cuoreIcona = document.getElementById("cuoreIcona");
+
+      preferitiBtn.addEventListener("click", () => {
+        cuoreIcona.classList.toggle("fa-regular");
+        cuoreIcona.classList.toggle("fa-solid");
+
+        if (cuoreIcona.classList.contains("fa-solid")) {
+          preferitiBtn.innerHTML =
+            '<i class="fa-solid fa-heart" id="cuoreIcona"></i> Nei preferiti';
+        } else {
+          preferitiBtn.innerHTML =
+            '<i class="fa-regular fa-heart" id="cuoreIcona"></i> Aggiungi ai preferiti';
+        }
+      });
+    </script>
   </body>
 </html>

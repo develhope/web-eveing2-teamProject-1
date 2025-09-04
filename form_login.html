@@ -10,10 +10,10 @@
   </head>
 
   <body>
-    <div>
+    <div style="position: relative; display: inline-block">
       <button id="userIcon" class="icon-button">👤</button>
     </div>
-
+    <!-- contenuto login -->
     <div id="loginDropdown" class="dropdown hidden">
       <h3>Login</h3>
       <form>
@@ -24,7 +24,7 @@
         <input type="password" id="password" name="password" required />
 
         <div class="button_group">
-          <button type="button">Accedi</button>
+          <button type="submit">Accedi</button>
           <a href="#">Registrati</a>
         </div>
       </form>
@@ -33,15 +33,48 @@
     <script>
       const userIcon = document.getElementById("userIcon");
       const loginDropdown = document.getElementById("loginDropdown");
+      const form = loginDropdown.querySelector("form");
 
+      // Toggle dropdown e focus input email
       userIcon.addEventListener("click", () => {
         loginDropdown.classList.toggle("hidden");
+        if (!loginDropdown.classList.contains("hidden")) {
+          loginDropdown.querySelector("#email").focus();
+        }
       });
 
+      // Chiudi dropdown cliccando fuori
       window.addEventListener("click", (e) => {
         if (!loginDropdown.contains(e.target) && !userIcon.contains(e.target)) {
           loginDropdown.classList.add("hidden");
         }
+      });
+
+      // Chiudi dropdown con ESC
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          loginDropdown.classList.add("hidden");
+        }
+      });
+
+      // Gestione submit form
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const email = form.email.value.trim();
+        const password = form.password.value.trim();
+
+        if (!email || !password) {
+          alert("Compila tutti i campi!");
+          return;
+        }
+
+        // Simulazione login
+        alert(`Login effettuato con email: ${email}`);
+
+        // Chiudi dropdown e resetta form
+        loginDropdown.classList.add("hidden");
+        form.reset();
       });
     </script>
   </body>

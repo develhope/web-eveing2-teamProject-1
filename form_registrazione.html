@@ -21,7 +21,7 @@
 
         <div>
           <label for="surname">Cognome</label>
-          <input type="text" name="surname" id="name" required />
+          <input type="text" name="surname" id="surname" required />
         </div>
 
         <div>
@@ -36,7 +36,7 @@
 
         <div>
           <label for="password">Password</label>
-          <input type="password" name="password" id="password " required />
+          <input type="password" name="password" id="password" required />
         </div>
 
         <div>
@@ -56,5 +56,34 @@
         <button type="submit">Registrati</button>
       </div>
     </form>
+    <script>
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault(); // blocca l'invio per validare prima
+
+        const password = form.password.value.trim();
+        const confirm = form.confirm.value.trim();
+
+        // Controllo password uguali
+        if (password !== confirm) {
+          alert("Le password non corrispondono!");
+          form.confirm.focus();
+          return;
+        }
+
+        // Controlla lunghezza minima password
+        if (password.length < 6) {
+          alert("La password deve contenere almeno 6 caratteri!");
+          form.password.focus();
+          return;
+        }
+
+        // Se tutto ok, invia il form (o fai chiamata API ecc)
+        alert("Registrazione completata con successo!");
+
+        form.submit(); // invia il form normalmente
+      });
+    </script>
   </body>
 </html>
