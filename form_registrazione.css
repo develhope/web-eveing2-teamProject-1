@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+form {
+  width: 90%;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 800px;
+}
+h1 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: black;
+}
+
+/*griglia dei campi*/
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 40px;
+}
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: black;
+}
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 999px;
+  background-color: #f8b097;
+  font-size: 16px;
+}
+input:focus {
+  outline: 2px solid #ff855b;
+  background-color: #fff2ed;
+}
+/*paragrafo condizioni*/
+.terms {
+  margin-top: 10px;
+  font-size: 14px;
+  color: black;
+}
+.terms a {
+  color: #ff855b;
+  text-decoration: none;
+}
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/*button registrati*/
+.form-footer {
+  margin-top: 30px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+}
+button[type="submit"] {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #ff855b;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 107, 45, 0.2);
+  letter-spacing: 0.5px;
+}
+button[type="submit"]:hover {
+  background-color: #ff855b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

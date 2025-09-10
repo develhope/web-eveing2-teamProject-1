@@ -1,0 +1,73 @@
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  width: 250px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.dropdown:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+button:hover {
+  background-color: #ff6f3a; /* colore più scuro, ad esempio */
+}
+.dropdown h3 {
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+}
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f8b097;
+}
+.button_group {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 8px;
+  min-width: 140px;
+  max-width: 200px;
+  margin: 0 auto;
+  margin: 20px auto 0 auto;
+}
+button {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 10px;
+  background-color: #ff855b;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 999px;
+}
+.button_group a {
+  text-decoration: underline;
+  color: #ff855b;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+.button_group a:hover {
+  color: #e6734f; /* colore leggermente più scuro */
+}
