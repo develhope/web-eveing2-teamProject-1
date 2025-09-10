@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="form_registrazione.css" />
+
+    <title>Travel Routes</title>
+  </head>
+
+  <body>
+    <form action="#">
+      <h1>Registrazione</h1>
+
+      <div class="form-grid">
+        <div>
+          <label for="name">Nome</label>
+          <input type="text" name="name" id="name" required />
+        </div>
+
+        <div>
+          <label for="surname">Cognome</label>
+          <input type="text" name="surname" id="surname" required />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+        </div>
+
+        <div>
+          <label for="birth">Data di nascita</label>
+          <input type="date" name="birth" id="birth" required />
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required />
+        </div>
+
+        <div>
+          <label for="confirm">Conferma password</label>
+          <input type="password" name="confirm" id="confirm" required />
+        </div>
+      </div>
+
+      <div>
+        <p class="terms">
+          Creando un account accetti le nostre condizioni su
+          <a href="#">Termini e Privacy</a>.
+        </p>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit">Registrati</button>
+      </div>
+    </form>
+    <script>
+      const form = document.querySelector("form");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault(); // blocca l'invio per validare prima
+
+        const password = form.password.value.trim();
+        const confirm = form.confirm.value.trim();
+
+        // Controllo password uguali
+        if (password !== confirm) {
+          alert("Le password non corrispondono!");
+          form.confirm.focus();
+          return;
+        }
+
+        // Controlla lunghezza minima password
+        if (password.length < 6) {
+          alert("La password deve contenere almeno 6 caratteri!");
+          form.password.focus();
+          return;
+        }
+
+        // Se tutto ok, invia il form (o fai chiamata API ecc)
+        alert("Registrazione completata con successo!");
+
+        form.submit(); // invia il form normalmente
+      });
+    </script>
+  </body>
+</html>
