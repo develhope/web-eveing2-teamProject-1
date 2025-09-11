@@ -15,7 +15,7 @@
   padding: 20px;
   justify-content: center;
 }
-.card {
+.cardCarousel {
   position: relative;
   width: 100%;
   border-radius: 30px;
@@ -25,16 +25,16 @@
   height: 200px;
   max-width: 300px;
 }
-.card.van {
+.cardCarousel.van {
   background-image: url(/immagini/van.jpg);
 }
-.card.states {
+.cardCarousel.states {
   background-image: url(/immagini/states.jpg);
 }
-.card.island {
+.cardCarousel.island {
   background-image: url(/immagini/island.jpg);
 }
-.card.europe {
+.cardCarousel.europe {
   background-image: url(/immagini/europe.jpg);
 }
 .card-text {
