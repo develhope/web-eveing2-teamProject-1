@@ -6,7 +6,6 @@
 body {
   background-color: white;
   color: #333;
-  line-height: 1.5;
 }
 /*NAV BAR*/
 .navbar {
@@ -15,40 +14,59 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 100;
 }
 
-.navbar ul {
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-logo {
+  height: 40px;
+}
+
+.navbar-menu {
   list-style: none;
   display: flex;
-  margin: 0;
-  padding: 0;
-  gap: 20px;
+  gap: 24px;
 }
 
-.navbar ul li a {
+.navbar-menu li a {
   text-decoration: none;
   color: black;
   font-weight: 600;
+  font-size: 15px;
+  transition: color 0.2s ease;
 }
 
-/* Icone lato destro */
+.navbar-menu li a:hover {
+  color: white;
+}
+
 .navbar-icons {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   position: relative;
 }
 
 .navbar-icons i {
   font-size: 20px;
   cursor: pointer;
+  color: black;
 }
 
-/* Dropdown login */
+/* DROPDOWN LOGIN */
 .login-dropdown {
   display: none;
+  opacity: 0;
+  transform: translateY(-10px);
   position: absolute;
-  top: 40px;
+  top: 36px;
   right: 0;
   background: white;
   border: 1px solid #ddd;
@@ -56,6 +74,16 @@ body {
   padding: 16px;
   width: 220px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.login-dropdown.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .login-dropdown input {
@@ -74,83 +102,93 @@ body {
   background: #ff8056;
   color: white;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .login-dropdown button:hover {
   background: #e76e46;
 }
-/* Navbar */
-.navbar {
-  background-color: #ff8056;
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* TOGGLE FULLSCREEN MENU */
+.toggle-body {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff3ed;
+  z-index: 99;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.toggle-body.active {
+  display: flex;
+}
+
+.navbar-toggle {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
+  margin-bottom: 24px;
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  gap: 20px;
-}
-
-.navbar ul li a {
-  text-decoration: none;
-  color: black;
-  font-weight: 600;
-}
-
-/* Icone lato destro */
-.navbar-icons {
+.logo-title-toggle {
   display: flex;
   align-items: center;
-  gap: 16px;
-  position: relative;
+  gap: 12px;
 }
 
-.navbar-icons i {
+.logo-senza-sfondo {
+  height: 40px;
+}
+
+.titolo-toggle-menu {
   font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.close-button {
+  height: 24px;
   cursor: pointer;
 }
 
-/* Dropdown login */
-.login-dropdown {
-  display: none;
-  position: absolute;
-  top: 40px;
-  right: 0;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  width: 220px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.lista-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 24px;
 }
 
-.login-dropdown input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+.lista-menu ul {
+  list-style: none;
 }
 
-.login-dropdown button {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  background: #ff8056;
-  color: white;
+.lista-menu ul li {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+  }
 
-.login-dropdown button:hover {
-  background: #e76e46;
+  .hamburger {
+    display: block;
+    color: black;
+  }
 }
-
 /*SEARCH BAR*/
 .search-container {
   text-align: center;
@@ -354,11 +392,19 @@ input[type="text"] {
 /*CONTENT WITH CARDS*/
 h2 {
   text-align: center;
-  margin-bottom: 20px;
+}
+.hero-image {
+  position: relative;
+  h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+  }
 }
 .hero-image img {
   width: 100%;
-  max-width: 900px;
+  max-height: 500px;
   display: block;
   margin: 0 auto 30px auto;
   object-fit: cover;
@@ -368,13 +414,14 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  max-width: 960px;
+  max-width: 1280px;
   margin: 0 auto;
+  margin: 3rem auto;
 }
 .card {
   position: relative;
-  width: 280px;
-  height: 180px;
+  width: 30%;
+  height: 200px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;

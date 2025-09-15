@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
@@ -13,18 +17,28 @@
   <body>
     <!--NAV BAR-->
     <nav class="navbar">
-      <ul>
-        <li><a href="#">Destinazioni</a></li>
-        <li><a href="#">Modo di viaggiare</a></li>
-        <li><a href="#">Tipo di vacanza</a></li>
-        <li><a href="#">Viaggia per stagione</a></li>
-      </ul>
+      <div class="navbar-left">
+        <a href="#">
+          <img
+            src="immagini/logo-senza-sfondo.png"
+            alt="Logo"
+            class="nav-logo"
+          />
+        </a>
+        <i class="fas fa-bars hamburger" id="hamburgerIcon"></i>
+
+        <ul class="navbar-menu">
+          <li><a href="#">Destinazioni</a></li>
+          <li><a href="#">Modo di viaggiare</a></li>
+          <li><a href="#">Tipo di vacanza</a></li>
+          <li><a href="#">Viaggia per stagione</a></li>
+        </ul>
+      </div>
 
       <div class="navbar-icons">
-        <i class="fas fa-heart"></i>
-        <i class="fas fa-user" id="userIcon"></i>
+        <i class="far fa-heart" aria-label="Preferiti"></i>
+        <i class="far fa-user" id="userIcon" aria-label="Login"></i>
 
-        <!-- Dropdown login -->
         <div class="login-dropdown" id="loginDropdown">
           <form>
             <input type="email" placeholder="E-mail" required />
@@ -34,6 +48,59 @@
         </div>
       </div>
     </nav>
+
+    <!-- TOGGLE MENU-->
+    <section class="toggle-body" id="toggleBody">
+      <div class="navbar-toggle">
+        <div class="logo-title-toggle">
+          <img
+            class="logo-senza-sfondo"
+            src="immagini/logo-senza-sfondo.png"
+            alt="Logo del sito"
+          />
+          <h3 class="titolo-toggle-menu">Travel Routes</h3>
+        </div>
+        <img
+          class="close-button"
+          id="closeToggle"
+          src="immagini/icona-chiusura.png"
+          alt="close button"
+        />
+      </div>
+
+      <section class="lista-menu">
+        <ul>
+          <li>Islanda</li>
+          <li>Stati Uniti</li>
+          <li>Africa</li>
+          <li>Francia</li>
+          <li>Spagna</li>
+          <li>Portogallo</li>
+          <li>Croazia</li>
+          <li>Grecia</li>
+        </ul>
+        <ul>
+          <li>Van</li>
+          <li>Camper</li>
+          <li>Moto</li>
+          <li>Macchina</li>
+          <li>Treno</li>
+          <li>A piedi</li>
+        </ul>
+        <ul>
+          <li>In solitaria</li>
+          <li>In gruppo organizzato</li>
+          <li>In gruppo con noi</li>
+          <li>In famiglia</li>
+        </ul>
+        <ul>
+          <li>Estate</li>
+          <li>Autunno</li>
+          <li>Inverno</li>
+          <li>Primavera</li>
+        </ul>
+      </section>
+    </section>
 
     <!--SEARCH BAR-->
     <div class="search-container">
@@ -161,9 +228,9 @@
 
     <!--CONTENT WITH CARDS-->
     <section class="inspiration">
-      <h2>Lasciati ispirare!</h2>
       <div class="hero-image">
         <img src="immagini/hotairbaloon.jpg" alt="Mongolfiere al tramonto" />
+        <h2>Lasciati ispirare!</h2>
       </div>
       <div class="cards">
         <div class="card">
