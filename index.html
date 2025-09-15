@@ -11,8 +11,31 @@
     <title>Travel Routes</title>
   </head>
   <body>
+    <!--NAV BAR-->
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Destinazioni</a></li>
+        <li><a href="#">Modo di viaggiare</a></li>
+        <li><a href="#">Tipo di vacanza</a></li>
+        <li><a href="#">Viaggia per stagione</a></li>
+      </ul>
+
+      <div class="navbar-icons">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-user" id="userIcon"></i>
+
+        <!-- Dropdown login -->
+        <div class="login-dropdown" id="loginDropdown">
+          <form>
+            <input type="email" placeholder="E-mail" required />
+            <input type="password" placeholder="Password" required />
+            <button type="submit">Accedi</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
     <!--SEARCH BAR-->
-    <body>
     <div class="search-container">
       <h2 class="search-title">CERCA IL TUO ITINERARIO</h2>
       <div class="search-bar">
@@ -104,27 +127,39 @@
       </div>
     </div>
 
-     <!--ICON BAR-->
-     <div class="icon-list">
-        <div class="icon-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADP0lEQVR4nO2ZPWgUQRiG1x80QWNExd9GtBAtBAnnfd8auTaNJIrBRkll9HZmcwa9+gqLBFtbW0EQFARLRRR/wSQWJrEQNBoRwUYUBH9emdm5y4W7TXb3Nrk93BemyM7OvPPM983s3MSyUqVKlaplhfO8FYIuQ9I4BH+HZDSlCP4MwQ8g7bMYpvZwEC6fhKBvTRu8LxRNweVDwSEk/zUNb8OlHC4eXGc1SRjKboPMnoLkVyZCX1Gw9wVJJxMJKloJEtyetZB8y0RnEgO5Nv+X9ZrwImElUBimdp1e3kSP+r8oaEK/5FKu8syhHgj+EEOOz6i+5vmVDqyBoOkAbR/NjSebhaTfEPQLec74gXhp5eTWV56pAcS3YGfqgEwFWOQP57WTNGqiMo6StbIWxDRc7FkUxdVP1XrxJjif3W+1LMiQ2snone6zkN2dCBA9u4KvQNCnCN+V+4HNlhxEQUT7OE5AZDYnCKQcCfv0Ym3g2nsh+I4B+Qlhc3JAFugf9cbT378Kgq8ZmPcYpk0tCTIHQ/fMFnwXlrXCakUQJZyjXRD0xYsMX7JaFaTq1PFHf+UlHWlZECUIGimfGjDYtWUhkCU7ovh5BqkrC6XcanUWM4v/pj+ICl88MDWHRj/PIHXVQr57j5de5sAbVxqFURwgShB8w7x/PYkgM+EjT2+TB+JESWv6nTiQyH3FuDuFLqFH/V+BWMuopoFgINcGwQVIegHJP3QR/ByCXPUjKbJ5DF4ICgJh76zctNTfMcZx4eiOOEAQwSsQiPeT1HQs+DUcuxdFu0MXyX2V2xBBY+p2pBGQqF4IBKLC6dVPYrCrs6Z+sKuz6mrHaQgkohfmQGhW/+Fku2sN6YlXZ/f6DkrQcTNTjwNB5DlTSRWXjjXiBYfPmJSbrT4S+5ei3eHbuXt4Q6zbcjGCl6CR8s3fSCUyYTtXIQ8zUHWzLvgqJJUg+WNjXjSrbyAXW5+VcEvu838neyJMajXFC5KkaThVdwEWchsh+Y1ZY/mIDEvvBZV2au/2DKb1YlN5qnNVz47XseSXYbbfpnhBfaTKBvUX2hiczPZGIJbNC/omXIf+mf4nqS70FIJFo5FopleqVKlSWU3TP4CsvRGKRue4AAAAAElFTkSuQmCC" alt="rv-campground">
-            <span>Itinerari in van</span>
-        </div>
-        <div class="icon-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFX0lEQVR4nO1ZaYgcVRBujUnUxBPvg3j90CUumEl2qtrVQUFdRX/JxIgrQZQxM/V6YwjBTX64oqjxQI0a1j9CEt2goGAUvBBEEzzRIGIMqAGPxDNqPJOYpKTeq+6Z3e6eHcnOTK/mQbPMu6q+915VfVXrefva/6hxOd/JhE+wgc1scCcb/JoJHpd+b7w0ruC1TPA3G+TYZ/v9Xi/rjQnOZsIdqvgDXO4+jQcKB3Dgn84GHnRgcIfM87Lc2MAqBbEieRxXKJiVXpYbO5vgtBO3N+aAfOVlubEzbOaFnVMSxxd2Tgmflzeub6Sc7xwnNwL/ERvpw+mR1yJYxhU4g0u5ifavwYcir9WH072sNzZ+b2ocsTaUkTjCcsKEd8g7ZwPfscG+xJuRZyZzbNywc1fVuwk2sIQJFjcdgBVWLE5gwmcSTnqICb5ggu/Z4ItssJ/JRwmGDe9tYJd8zUUggjxvPyZ4zCkOP7GBLg7QT3lCISX5lQnv56Bn8uhA0K5pPhCC+9RYf5fTtn1CP0KlK3g+V2Ydx4Rz2OAgG9xQA+o1LuUOazsQlvcb8SS8JOoPzgU9+U8S1xHMsMzX3eJ6Ado2IEwwTxXZxRWYPUJ4vyowmLq+gtOYYKMC/kwIZGzO/Pwp1duD1+3BDXRMGkMQOIcJd7PBPUxYio0beMkJz19Vd59S7ig28K4q+w0HeI7tL+fP0iC5M25jcO/YgKhATySA8OYE5Saygd8syL78sYl7LPIP4UphqtuvMJUJXtb9trHBNXpILr4QrrSkMvAv0NvbMgYgcBob/EWF3pM4J/RYhB/XcdWb2OAPTPmLbN9AxyQmWF1z6n8xwXJ5WtV9QyBjwMfU64ig58Xt1ncAsDwZqDqC0L5kvrjwAW9/uWEmuK3W+NlSfHja3rDb95axAPKl3awvn6sz5xVVtJg4TnirKrSx5gmtGemGOejqYINPRXMI/2QDAwJ474GExE/fd2xcnojBP+zpzcNjkveAt1Sxy629EW5VMJ/aYOoo/VANSLbfTecdv9cAGr0RruS79bQ/ShxfAEfa50SwPUyy1MW+nxD9t7OBR5oSR5jwUT3N52Jj8s4NPKvjDycDhdlqG68O659bOFCch03ACLZYQy/PPNmONQWInJ7wpNDgyziLS7mDxf9HICwQ/8rE9VVOtqhhmaZJkV1cpvr7dFIYdJ1U92kG6DcszzSRomg8GbQU3fl8oRp3ssG3reAb4cRkpcIoDuu53H1EQ7JMi9jvMKFCzZ2iSxLHLQtWfiWggq5DswkkgGtGK4HKbVmS6JzCujRX3l4gRqsh7tvDBpYmBTDxSEpTZN7atHpXW4BYDiX8SRlqTaFhSNxrbL6t+2pOIqQxJVvklgMJoBBSD/vbRe1t0RMKuo9OUPJMJvxW192VDSCkhk54d1UJv7eGIH4uisfX+TN1fHNWgGzSYIhxm7H5iRYn8MJ/oyy3Eogt8YRZnhq3K0xrglWl4poswdzMAeEFcJAkUXriS2PPinCd/S35hngxTZyyB4RgmQrbIKBqal1vKJDSaIq1HQgL73IFCPm32YyqcLheFfgxljBlDQjPLxwekUCD/VE/+SeoUUv/1Y0o1l4ghE9GMaJYnFDT/0JazpI5IOxKQlq+6To16ie8Tvu3plUPswWEwlOHG0aQwZ+d4PT/dWQMCLgssYa52jKOVkTqr5VqCHLk4YKeySFjbj0QowkSwWLxSlEtS4x8lGoHG3hT195uK46yh1P2w9YDqfiXxdJbccEBXDHq2sC/2BXmhq3dLf0tBxKBIXzH1bHgPSlpeg02NvlLXX3LloY+EOeRPhfXSnBtdO99zcto+wfheuKeeEjzNQAAAABJRU5ErkJggg==" alt="trekking">
-            <span>Itinerari a piedi</span>
-        </div>
-        <div class="icon-item">
-            <img src="data:image/png;base64,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" alt="motorcycle">
-            <span>Itinerari in moto</span>
-        </div>
-        <div class="icon-item">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAChklEQVR4nO2Zy04UQRSGZ2NY4FqJ4EbFJYmXYc6ZIG55DRRhpqt6NryEay8rbyuNZMIKfAHd4EokJl6IiQ+giRJBcMFvurpm0gITqu1TM21SJzmb6p7/P1/1mZlOnUolRIjBBxZoFJpuQ/MGFP+EZoimMpobxkPVz/iB0HQTinfEi+8NtQPFs7IQihoZk6eIalNYnBgWNUl8FieGoevXoOhZBmheRjyun4fiPWjeR8w3RERdO0DzPhTtojl1TkLwnt2dB4euRddPQtMXgVZ6daS3okf2+h0BEN40YjFf8gai6GUPkMu2vT4VB0kerQGZGSosltc7nhmyoLvFxeyuiVQ2KH90dqQEWSkEMn/lxKABINURRYUG/fnSFIIAUrJCEEBKVggCSMkKQQApWSEIICUrBAEkE+E1XpcMJAkxoX8MBBAHIcSTY1DUhqKtNHkZrdp4JWe46MAXSGrO3w71cbK2QKP5II7XgTeQZAfNGq2YQ+0kFa3a+5acdR114BFky6xld6159ay973sOECcd+APhH2YtnhwrBuKmA48gy2kv06rp8yQ1vbBr7RwgTjoQBPmdPTKFql6E5q9HfkkjuuAOcrwOukemvCcAQp8PHmKnkyteMu1hktp5IFx10DnE1rxZHETRfbsrDwuL5fbmJ9b7bnGxVm3cnsgnQ5c5kQpdfHX9lvHU9CsZNsmIRrVmpoefI+Jpb6O3iKeNR9ePGrImiuagebuPb7zbyfhNFOKv3/lO33pNepz9f5EHadVOQ9M7+8g/SM7C0eBTXW3NH/3N2T1C9A0GfYDoCww0v7UQ7xFVR8SEe/lF1RHjlXquywkrfg1Nb/oBcQBmHZrXuoshKv9P/AHC6zWXeUC+tQAAAABJRU5ErkJggg==" alt="subway">
-            <span>Itinerari in treno</span>
-        </div>
+    <!--ICON BAR-->
+    <div class="icon-list">
+      <div class="icon-item">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADP0lEQVR4nO2ZPWgUQRiG1x80QWNExd9GtBAtBAnnfd8auTaNJIrBRkll9HZmcwa9+gqLBFtbW0EQFARLRRR/wSQWJrEQNBoRwUYUBH9emdm5y4W7TXb3Nrk93BemyM7OvPPM983s3MSyUqVKlaplhfO8FYIuQ9I4BH+HZDSlCP4MwQ8g7bMYpvZwEC6fhKBvTRu8LxRNweVDwSEk/zUNb8OlHC4eXGc1SRjKboPMnoLkVyZCX1Gw9wVJJxMJKloJEtyetZB8y0RnEgO5Nv+X9ZrwImElUBimdp1e3kSP+r8oaEK/5FKu8syhHgj+EEOOz6i+5vmVDqyBoOkAbR/NjSebhaTfEPQLec74gXhp5eTWV56pAcS3YGfqgEwFWOQP57WTNGqiMo6StbIWxDRc7FkUxdVP1XrxJjif3W+1LMiQ2snone6zkN2dCBA9u4KvQNCnCN+V+4HNlhxEQUT7OE5AZDYnCKQcCfv0Ym3g2nsh+I4B+Qlhc3JAFugf9cbT378Kgq8ZmPcYpk0tCTIHQ/fMFnwXlrXCakUQJZyjXRD0xYsMX7JaFaTq1PFHf+UlHWlZECUIGimfGjDYtWUhkCU7ovh5BqkrC6XcanUWM4v/pj+ICl88MDWHRj/PIHXVQr57j5de5sAbVxqFURwgShB8w7x/PYkgM+EjT2+TB+JESWv6nTiQyH3FuDuFLqFH/V+BWMuopoFgINcGwQVIegHJP3QR/ByCXPUjKbJ5DF4ICgJh76zctNTfMcZx4eiOOEAQwSsQiPeT1HQs+DUcuxdFu0MXyX2V2xBBY+p2pBGQqF4IBKLC6dVPYrCrs6Z+sKuz6mrHaQgkohfmQGhW/+Fku2sN6YlXZ/f6DkrQcTNTjwNB5DlTSRWXjjXiBYfPmJSbrT4S+5ei3eHbuXt4Q6zbcjGCl6CR8s3fSCUyYTtXIQ8zUHWzLvgqJJUg+WNjXjSrbyAXW5+VcEvu838neyJMajXFC5KkaThVdwEWchsh+Y1ZY/mIDEvvBZV2au/2DKb1YlN5qnNVz47XseSXYbbfpnhBfaTKBvUX2hiczPZGIJbNC/omXIf+mf4nqS70FIJFo5FopleqVKlSWU3TP4CsvRGKRue4AAAAAElFTkSuQmCC"
+          alt="rv-campground"
+        />
+        <span>Itinerari in van</span>
+      </div>
+      <div class="icon-item">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFX0lEQVR4nO1ZaYgcVRBujUnUxBPvg3j90CUumEl2qtrVQUFdRX/JxIgrQZQxM/V6YwjBTX64oqjxQI0a1j9CEt2goGAUvBBEEzzRIGIMqAGPxDNqPJOYpKTeq+6Z3e6eHcnOTK/mQbPMu6q+915VfVXrefva/6hxOd/JhE+wgc1scCcb/JoJHpd+b7w0ruC1TPA3G+TYZ/v9Xi/rjQnOZsIdqvgDXO4+jQcKB3Dgn84GHnRgcIfM87Lc2MAqBbEieRxXKJiVXpYbO5vgtBO3N+aAfOVlubEzbOaFnVMSxxd2Tgmflzeub6Sc7xwnNwL/ERvpw+mR1yJYxhU4g0u5ifavwYcir9WH072sNzZ+b2ocsTaUkTjCcsKEd8g7ZwPfscG+xJuRZyZzbNywc1fVuwk2sIQJFjcdgBVWLE5gwmcSTnqICb5ggu/Z4ItssJ/JRwmGDe9tYJd8zUUggjxvPyZ4zCkOP7GBLg7QT3lCISX5lQnv56Bn8uhA0K5pPhCC+9RYf5fTtn1CP0KlK3g+V2Ydx4Rz2OAgG9xQA+o1LuUOazsQlvcb8SS8JOoPzgU9+U8S1xHMsMzX3eJ6Ado2IEwwTxXZxRWYPUJ4vyowmLq+gtOYYKMC/kwIZGzO/Pwp1duD1+3BDXRMGkMQOIcJd7PBPUxYio0beMkJz19Vd59S7ig28K4q+w0HeI7tL+fP0iC5M25jcO/YgKhATySA8OYE5Saygd8syL78sYl7LPIP4UphqtuvMJUJXtb9trHBNXpILr4QrrSkMvAv0NvbMgYgcBob/EWF3pM4J/RYhB/XcdWb2OAPTPmLbN9AxyQmWF1z6n8xwXJ5WtV9QyBjwMfU64ig58Xt1ncAsDwZqDqC0L5kvrjwAW9/uWEmuK3W+NlSfHja3rDb95axAPKl3awvn6sz5xVVtJg4TnirKrSx5gmtGemGOejqYINPRXMI/2QDAwJ474GExE/fd2xcnojBP+zpzcNjkveAt1Sxy629EW5VMJ/aYOoo/VANSLbfTecdv9cAGr0RruS79bQ/ShxfAEfa50SwPUyy1MW+nxD9t7OBR5oSR5jwUT3N52Jj8s4NPKvjDycDhdlqG68O659bOFCch03ACLZYQy/PPNmONQWInJ7wpNDgyziLS7mDxf9HICwQ/8rE9VVOtqhhmaZJkV1cpvr7dFIYdJ1U92kG6DcszzSRomg8GbQU3fl8oRp3ssG3reAb4cRkpcIoDuu53H1EQ7JMi9jvMKFCzZ2iSxLHLQtWfiWggq5DswkkgGtGK4HKbVmS6JzCujRX3l4gRqsh7tvDBpYmBTDxSEpTZN7atHpXW4BYDiX8SRlqTaFhSNxrbL6t+2pOIqQxJVvklgMJoBBSD/vbRe1t0RMKuo9OUPJMJvxW192VDSCkhk54d1UJv7eGIH4uisfX+TN1fHNWgGzSYIhxm7H5iRYn8MJ/oyy3Eogt8YRZnhq3K0xrglWl4poswdzMAeEFcJAkUXriS2PPinCd/S35hngxTZyyB4RgmQrbIKBqal1vKJDSaIq1HQgL73IFCPm32YyqcLheFfgxljBlDQjPLxwekUCD/VE/+SeoUUv/1Y0o1l4ghE9GMaJYnFDT/0JazpI5IOxKQlq+6To16ie8Tvu3plUPswWEwlOHG0aQwZ+d4PT/dWQMCLgssYa52jKOVkTqr5VqCHLk4YKeySFjbj0QowkSwWLxSlEtS4x8lGoHG3hT195uK46yh1P2w9YDqfiXxdJbccEBXDHq2sC/2BXmhq3dLf0tBxKBIXzH1bHgPSlpeg02NvlLXX3LloY+EOeRPhfXSnBtdO99zcto+wfheuKeeEjzNQAAAABJRU5ErkJggg=="
+          alt="trekking"
+        />
+        <span>Itinerari a piedi</span>
+      </div>
+      <div class="icon-item">
+        <img
+          src="data:image/png;base64,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"
+          alt="motorcycle"
+        />
+        <span>Itinerari in moto</span>
+      </div>
+      <div class="icon-item">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAChklEQVR4nO2Zy04UQRSGZ2NY4FqJ4EbFJYmXYc6ZIG55DRRhpqt6NryEay8rbyuNZMIKfAHd4EokJl6IiQ+giRJBcMFvurpm0gITqu1TM21SJzmb6p7/P1/1mZlOnUolRIjBBxZoFJpuQ/MGFP+EZoimMpobxkPVz/iB0HQTinfEi+8NtQPFs7IQihoZk6eIalNYnBgWNUl8FieGoevXoOhZBmheRjyun4fiPWjeR8w3RERdO0DzPhTtojl1TkLwnt2dB4euRddPQtMXgVZ6daS3okf2+h0BEN40YjFf8gai6GUPkMu2vT4VB0kerQGZGSosltc7nhmyoLvFxeyuiVQ2KH90dqQEWSkEMn/lxKABINURRYUG/fnSFIIAUrJCEEBKVggCSMkKQQApWSEIICUrBAEkE+E1XpcMJAkxoX8MBBAHIcSTY1DUhqKtNHkZrdp4JWe46MAXSGrO3w71cbK2QKP5II7XgTeQZAfNGq2YQ+0kFa3a+5acdR114BFky6xld6159ay973sOECcd+APhH2YtnhwrBuKmA48gy2kv06rp8yQ1vbBr7RwgTjoQBPmdPTKFql6E5q9HfkkjuuAOcrwOukemvCcAQp8PHmKnkyteMu1hktp5IFx10DnE1rxZHETRfbsrDwuL5fbmJ9b7bnGxVm3cnsgnQ5c5kQpdfHX9lvHU9CsZNsmIRrVmpoefI+Jpb6O3iKeNR9ePGrImiuagebuPb7zbyfhNFOKv3/lO33pNepz9f5EHadVOQ9M7+8g/SM7C0eBTXW3NH/3N2T1C9A0GfYDoCww0v7UQ7xFVR8SEe/lF1RHjlXquywkrfg1Nb/oBcQBmHZrXuoshKv9P/AHC6zWXeUC+tQAAAABJRU5ErkJggg=="
+          alt="subway"
+        />
+        <span>Itinerari in treno</span>
+      </div>
     </div>
 
-     <!--CONTENT WITH CARDS-->
+    <!--CONTENT WITH CARDS-->
     <section class="inspiration">
       <h2>Lasciati ispirare!</h2>
       <div class="hero-image">
@@ -160,5 +195,105 @@
         </div>
       </div>
     </section>
+
+    <!--RECENSIONI-->
+    <header>
+      <h1>Recensioni dei Nostri Viaggiatori</h1>
+    </header>
+
+    <div class="container">
+      <div class="review">
+        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+        <div class="review-text">
+          “Abbiamo visitato l'Islanda con il pacchetto proposto dal sito e ogni
+          dettaglio era curato alla perfezione. Paesaggi mozzafiato,
+          organizzazione impeccabile e guide esperte. Consigliatissimo!”
+        </div>
+        <div class="author">— Luca R., Milano</div>
+      </div>
+
+      <div class="review">
+        <div class="stars">⭐️⭐️⭐️⭐️</div>
+        <div class="review-text">
+          “Prenotazione semplice e veloce. Siamo andati a Bali ed è stato tutto
+          come descritto sul sito. L’assistenza clienti è molto reattiva e
+          disponibile.”
+        </div>
+        <div class="author">— Chiara M., Roma</div>
+      </div>
+
+      <div class="review">
+        <div class="stars">⭐️⭐️⭐️</div>
+        <div class="review-text">
+          “Il viaggio in Marocco è stato affascinante, ma l’hotel scelto non era
+          all’altezza delle aspettative. Per il resto, trasporti e tour ben
+          organizzati.”
+        </div>
+        <div class="author">— Giovanni F., Torino</div>
+      </div>
+
+      <div class="review">
+        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+        <div class="review-text">
+          “Il nostro tour in Giappone è stato un sogno che si realizza. Tutto è
+          stato perfetto: voli, hotel e itinerari ben strutturati. Torneremo
+          sicuramente a prenotare qui.”
+        </div>
+        <div class="author">— Alessia D., Firenze</div>
+      </div>
+    </div>
+
+    <!--FOOTER-->
+    <footer>
+      <div class="footer-container">
+        <!-- Logo e descrizione -->
+        <div class="footer-col">
+          <h4>🌍 Travel Routes</h4>
+          <p>
+            Viaggia con noi e scopri itinerari unici in tutto il mondo.
+            Esperienze personalizzate, adatte ad ogni stile di viaggio.
+          </p>
+        </div>
+
+        <!-- Itinerari -->
+        <div class="footer-col">
+          <h4>Itinerari</h4>
+          <ul>
+            <li><a href="#">Destinazioni</a></li>
+            <li><a href="#">Modo di viaggiare</a></li>
+            <li><a href="#">Tipo di vacanza</a></li>
+            <li><a href="#">Viaggia per stagione</a></li>
+          </ul>
+        </div>
+
+        <!-- Supporto -->
+        <div class="footer-col">
+          <h4>Supporto</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Termini e condizioni</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Assicurazione di viaggio</a></li>
+          </ul>
+        </div>
+
+        <!-- Contatti -->
+        <div class="footer-col">
+          <h4>Contattaci</h4>
+          <p>📧 travelroutes@gmail.com</p>
+          <p>📞 +39 333 48 77 951</p>
+          <p>📍 Roma, Italia</p>
+          <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 Travel Routes – Tutti i diritti riservati
+      </div>
+    </footer>
   </body>
 </html>
