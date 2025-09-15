@@ -7,15 +7,46 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+<<<<<<< HEAD
     <link rel="stylesheet" href="search_bar.css" />
     <link rel="stylesheet" href="carouselCss.css" />
     <link rel="stylesheet" href="iconBar-css.css" />
     <link rel="stylesheet" href="contentwithcards.css" />
+=======
+    <link rel="stylesheet" href="generalCss.css" />
+>>>>>>> 90ef53256c8949516f46b1a0f9c8811eeb808dd1
     <title>Travel Routes</title>
   </head>
   <body>
-    <!--SEARCH BAR-->
+    <!--NAV BAR-->
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">Destinazioni</a></li>
+        <li><a href="#">Modo di viaggiare</a></li>
+        <li><a href="#">Tipo di vacanza</a></li>
+        <li><a href="#">Viaggia per stagione</a></li>
+      </ul>
 
+      <div class="navbar-icons">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-user" id="userIcon"></i>
+
+        <!-- Dropdown login -->
+        <div class="login-dropdown" id="loginDropdown">
+          <form>
+            <input type="email" placeholder="E-mail" required />
+            <input type="password" placeholder="Password" required />
+            <button type="submit">Accedi</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!--SEARCH BAR-->
+<<<<<<< HEAD
+
+=======
+>>>>>>> 90ef53256c8949516f46b1a0f9c8811eeb808dd1
     <div class="search-container">
       <h2 class="search-title">CERCA IL TUO ITINERARIO</h2>
       <div class="search-bar">
@@ -175,5 +206,105 @@
         </div>
       </div>
     </section>
+
+    <!--RECENSIONI-->
+    <header>
+      <h1>Recensioni dei Nostri Viaggiatori</h1>
+    </header>
+
+    <div class="container">
+      <div class="review">
+        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+        <div class="review-text">
+          “Abbiamo visitato l'Islanda con il pacchetto proposto dal sito e ogni
+          dettaglio era curato alla perfezione. Paesaggi mozzafiato,
+          organizzazione impeccabile e guide esperte. Consigliatissimo!”
+        </div>
+        <div class="author">— Luca R., Milano</div>
+      </div>
+
+      <div class="review">
+        <div class="stars">⭐️⭐️⭐️⭐️</div>
+        <div class="review-text">
+          “Prenotazione semplice e veloce. Siamo andati a Bali ed è stato tutto
+          come descritto sul sito. L’assistenza clienti è molto reattiva e
+          disponibile.”
+        </div>
+        <div class="author">— Chiara M., Roma</div>
+      </div>
+
+      <div class="review">
+        <div class="stars">⭐️⭐️⭐️</div>
+        <div class="review-text">
+          “Il viaggio in Marocco è stato affascinante, ma l’hotel scelto non era
+          all’altezza delle aspettative. Per il resto, trasporti e tour ben
+          organizzati.”
+        </div>
+        <div class="author">— Giovanni F., Torino</div>
+      </div>
+
+      <div class="review">
+        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+        <div class="review-text">
+          “Il nostro tour in Giappone è stato un sogno che si realizza. Tutto è
+          stato perfetto: voli, hotel e itinerari ben strutturati. Torneremo
+          sicuramente a prenotare qui.”
+        </div>
+        <div class="author">— Alessia D., Firenze</div>
+      </div>
+    </div>
+
+    <!--FOOTER-->
+    <footer>
+      <div class="footer-container">
+        <!-- Logo e descrizione -->
+        <div class="footer-col">
+          <h4>🌍 Travel Routes</h4>
+          <p>
+            Viaggia con noi e scopri itinerari unici in tutto il mondo.
+            Esperienze personalizzate, adatte ad ogni stile di viaggio.
+          </p>
+        </div>
+
+        <!-- Itinerari -->
+        <div class="footer-col">
+          <h4>Itinerari</h4>
+          <ul>
+            <li><a href="#">Destinazioni</a></li>
+            <li><a href="#">Modo di viaggiare</a></li>
+            <li><a href="#">Tipo di vacanza</a></li>
+            <li><a href="#">Viaggia per stagione</a></li>
+          </ul>
+        </div>
+
+        <!-- Supporto -->
+        <div class="footer-col">
+          <h4>Supporto</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Termini e condizioni</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Assicurazione di viaggio</a></li>
+          </ul>
+        </div>
+
+        <!-- Contatti -->
+        <div class="footer-col">
+          <h4>Contattaci</h4>
+          <p>📧 travelroutes@gmail.com</p>
+          <p>📞 +39 333 48 77 951</p>
+          <p>📍 Roma, Italia</p>
+          <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2025 Travel Routes – Tutti i diritti riservati
+      </div>
+    </footer>
   </body>
 </html>
