@@ -25,16 +25,16 @@
   height: 200px;
   max-width: 300px;
 }
-.cardCarousel.van {
+.cardCarousel .van {
   background-image: url(/immagini/van.jpg);
 }
-.cardCarousel.states {
+.cardCarousel .states {
   background-image: url(/immagini/states.jpg);
 }
-.cardCarousel.island {
+.cardCarousel .island {
   background-image: url(/immagini/island.jpg);
 }
-.cardCarousel.europe {
+.cardCarousel .europe {
   background-image: url(/immagini/europe.jpg);
 }
 .card-text {
