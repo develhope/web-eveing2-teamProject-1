@@ -26,30 +26,95 @@
           />
         </a>
         <i class="fas fa-bars hamburger" id="hamburgerIcon"></i>
-
-        <ul class="navbar-menu">
-          <li><a href="#">Destinazioni</a></li>
-          <li><a href="#">Modo di viaggiare</a></li>
-          <li><a href="#">Tipo di vacanza</a></li>
-          <li><a href="#">Viaggia per stagione</a></li>
-        </ul>
       </div>
+
+      <ul class="navbar-menu">
+        <li class="dropdown">
+          <a href="#" id="link-destinazioni">Destinazioni</a>
+          <ul class="dropdown-menu">
+            <li>Islanda</li>
+            <li>Stati Uniti</li>
+            <li>Africa</li>
+            <li>Francia</li>
+            <li>Spagna</li>
+            <li>Portogallo</li>
+            <li>Croazia</li>
+            <li>Grecia</li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="link-modo">Modo di viaggiare</a>
+          <ul class="dropdown-menu">
+            <li>Van</li>
+            <li>Camper</li>
+            <li>Moto</li>
+            <li>Macchina</li>
+            <li>Treno</li>
+            <li>A piedi</li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="link-tipo">Tipo di vacanza</a>
+          <ul class="dropdown-menu">
+            <li>In solitaria</li>
+            <li>In gruppo organizzato</li>
+            <li>In gruppo con noi</li>
+            <li>In famiglia</li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="link-stagione">Viaggia per stagione</a>
+          <ul class="dropdown-menu">
+            <li>Estate</li>
+            <li>Autunno</li>
+            <li>Inverno</li>
+            <li>Primavera</li>
+          </ul>
+        </li>
+      </ul>
 
       <div class="navbar-icons">
         <i class="far fa-heart" aria-label="Preferiti"></i>
-        <i class="far fa-user" id="userIcon" aria-label="Login"></i>
 
-        <div class="login-dropdown" id="loginDropdown">
-          <form>
-            <input type="email" placeholder="E-mail" required />
-            <input type="password" placeholder="Password" required />
-            <button type="submit">Accedi</button>
-          </form>
+        <!--FORM LOGIN-->
+        <div class="user-login-container">
+          <i class="far fa-user" id="userIcon" aria-label="Login"></i>
+          <div id="loginDropdown" class="dropdown hidden">
+            <h3>Login</h3>
+            <form>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required />
+
+              <div class="button_group">
+                <button type="submit">Accedi</button>
+                <a href="form_registrazione.html">Registrati</a>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
+      <script>
+        const userIcon = document.getElementById("userIcon");
+        const loginDropdown = document.getElementById("loginDropdown");
+
+        userIcon.addEventListener("click", (e) => {
+          e.stopPropagation();
+          loginDropdown.classList.toggle("show");
+          if (loginDropdown.classList.contains("show")) {
+            loginDropdown.querySelector("#email").focus();
+          }
+        });
+
+        document.addEventListener("click", () => {
+          loginDropdown.classList.remove("show");
+        });
+      </script>
     </nav>
 
-    <!-- TOGGLE MENU-->
+    <!-- TOGGLE MENU MOBILE-->
     <section class="toggle-body" id="toggleBody">
       <div class="navbar-toggle">
         <div class="logo-title-toggle">
@@ -70,6 +135,7 @@
 
       <section class="lista-menu">
         <ul>
+          <li><b>Destinazioni</b></li>
           <li>Islanda</li>
           <li>Stati Uniti</li>
           <li>Africa</li>
@@ -80,6 +146,7 @@
           <li>Grecia</li>
         </ul>
         <ul>
+          <li><b>Modo di viaggiare</b></li>
           <li>Van</li>
           <li>Camper</li>
           <li>Moto</li>
@@ -88,12 +155,14 @@
           <li>A piedi</li>
         </ul>
         <ul>
+          <li><b>Tipo di vacanza</b></li>
           <li>In solitaria</li>
           <li>In gruppo organizzato</li>
           <li>In gruppo con noi</li>
           <li>In famiglia</li>
         </ul>
         <ul>
+          <li><b>Viaggia per stagione</b></li>
           <li>Estate</li>
           <li>Autunno</li>
           <li>Inverno</li>
@@ -101,6 +170,66 @@
         </ul>
       </section>
     </section>
+
+    <script>
+      const heartIcon = document.querySelector(".fa-heart");
+      const hamburgerIcon = document.getElementById("hamburgerIcon");
+      const toggleBody = document.getElementById("toggleBody");
+      const closeToggle = document.getElementById("closeToggle");
+
+      heartIcon.addEventListener("click", () => {
+        heartIcon.classList.toggle("fas");
+        heartIcon.classList.toggle("far");
+      });
+
+      hamburgerIcon.addEventListener("click", () => {
+        toggleBody.classList.add("active");
+      });
+
+      closeToggle.addEventListener("click", () => {
+        toggleBody.classList.remove("active");
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          toggleBody.classList.remove("active");
+        }
+      });
+      const dropdownLinks = document.querySelectorAll(
+        ".navbar-menu .dropdown > a"
+      );
+
+      dropdownLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const dropdownMenu = this.nextElementSibling;
+
+          // Chiudi tutti gli altri dropdown
+          document
+            .querySelectorAll(".navbar-menu .dropdown-menu.active")
+            .forEach((menu) => {
+              if (menu !== dropdownMenu) {
+                menu.classList.remove("active");
+              }
+            });
+
+          // Mostra/nascondi il menu cliccato
+          dropdownMenu.classList.toggle("active");
+        });
+      });
+
+      // Chiudi tutti i dropdown se clicchi fuori
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".navbar-menu .dropdown")) {
+          document
+            .querySelectorAll(".navbar-menu .dropdown-menu.active")
+            .forEach((menu) => {
+              menu.classList.remove("active");
+            });
+        }
+      });
+    </script>
 
     <!--SEARCH BAR-->
     <div class="search-container">

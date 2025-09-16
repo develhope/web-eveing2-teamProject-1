@@ -54,13 +54,13 @@ button {
   width: auto;
   padding: 6px 12px;
   font-size: 12px;
-  border-radius: 10px;
   background-color: #ff855b;
   color: white;
   font-weight: bold;
   cursor: pointer;
   text-align: center;
   border-radius: 999px;
+  border: none;
 }
 .button_group a {
   text-decoration: underline;
