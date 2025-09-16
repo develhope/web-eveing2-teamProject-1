@@ -4,38 +4,240 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 496c91db657ef96773ae16fe583890ceac091a34
     <link rel="stylesheet" href="generalCss.css" />
     <title>Travel Routes</title>
   </head>
   <body>
     <!--NAV BAR-->
     <nav class="navbar">
-      <ul>
-        <li><a href="#">Destinazioni</a></li>
-        <li><a href="#">Modo di viaggiare</a></li>
-        <li><a href="#">Tipo di vacanza</a></li>
-        <li><a href="#">Viaggia per stagione</a></li>
+      <div class="navbar-left">
+        <a href="#">
+          <img
+            src="immagini/logo-senza-sfondo.png"
+            alt="Logo"
+            class="nav-logo"
+          />
+        </a>
+        <i class="fas fa-bars hamburger" id="hamburgerIcon"></i>
+      </div>
+
+      <ul class="navbar-menu">
+        <li class="dropdown">
+          <a href="#" id="link-destinazioni">Destinazioni</a>
+          <ul class="dropdown-menu">
+            <li>Islanda</li>
+            <li>Stati Uniti</li>
+            <li>Africa</li>
+            <li>Francia</li>
+            <li>Spagna</li>
+            <li>Portogallo</li>
+            <li>Croazia</li>
+            <li>Grecia</li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="link-modo">Modo di viaggiare</a>
+          <ul class="dropdown-menu">
+            <li>Van</li>
+            <li>Camper</li>
+            <li>Moto</li>
+            <li>Macchina</li>
+            <li>Treno</li>
+            <li>A piedi</li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="link-tipo">Tipo di vacanza</a>
+          <ul class="dropdown-menu">
+            <li>In solitaria</li>
+            <li>In gruppo organizzato</li>
+            <li>In gruppo con noi</li>
+            <li>In famiglia</li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="link-stagione">Viaggia per stagione</a>
+          <ul class="dropdown-menu">
+            <li>Estate</li>
+            <li>Autunno</li>
+            <li>Inverno</li>
+            <li>Primavera</li>
+          </ul>
+        </li>
       </ul>
 
       <div class="navbar-icons">
-        <i class="fas fa-heart"></i>
-        <i class="fas fa-user" id="userIcon"></i>
+        <i class="far fa-heart" aria-label="Preferiti"></i>
 
-        <!-- Dropdown login -->
-        <div class="login-dropdown" id="loginDropdown">
-          <form>
-            <input type="email" placeholder="E-mail" required />
-            <input type="password" placeholder="Password" required />
-            <button type="submit">Accedi</button>
-          </form>
+        <!--FORM LOGIN-->
+        <div class="user-login-container">
+          <i class="far fa-user" id="userIcon" aria-label="Login"></i>
+          <div id="loginDropdown" class="dropdown hidden">
+            <h3>Login</h3>
+            <form>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required />
+
+              <div class="button_group">
+                <button type="submit">Accedi</button>
+                <a href="form_registrazione.html">Registrati</a>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
+      <script>
+        const userIcon = document.getElementById("userIcon");
+        const loginDropdown = document.getElementById("loginDropdown");
+
+        userIcon.addEventListener("click", (e) => {
+          e.stopPropagation();
+          loginDropdown.classList.toggle("show");
+          if (loginDropdown.classList.contains("show")) {
+            loginDropdown.querySelector("#email").focus();
+          }
+        });
+
+        document.addEventListener("click", () => {
+          loginDropdown.classList.remove("show");
+        });
+      </script>
     </nav>
 
+<<<<<<< HEAD
+=======
+    <!-- TOGGLE MENU MOBILE-->
+    <section class="toggle-body" id="toggleBody">
+      <div class="navbar-toggle">
+        <div class="logo-title-toggle">
+          <img
+            class="logo-senza-sfondo"
+            src="immagini/logo-senza-sfondo.png"
+            alt="Logo del sito"
+          />
+          <h3 class="titolo-toggle-menu">Travel Routes</h3>
+        </div>
+        <img
+          class="close-button"
+          id="closeToggle"
+          src="immagini/icona-chiusura.png"
+          alt="close button"
+        />
+      </div>
+
+      <section class="lista-menu">
+        <ul>
+          <li><b>Destinazioni</b></li>
+          <li>Islanda</li>
+          <li>Stati Uniti</li>
+          <li>Africa</li>
+          <li>Francia</li>
+          <li>Spagna</li>
+          <li>Portogallo</li>
+          <li>Croazia</li>
+          <li>Grecia</li>
+        </ul>
+        <ul>
+          <li><b>Modo di viaggiare</b></li>
+          <li>Van</li>
+          <li>Camper</li>
+          <li>Moto</li>
+          <li>Macchina</li>
+          <li>Treno</li>
+          <li>A piedi</li>
+        </ul>
+        <ul>
+          <li><b>Tipo di vacanza</b></li>
+          <li>In solitaria</li>
+          <li>In gruppo organizzato</li>
+          <li>In gruppo con noi</li>
+          <li>In famiglia</li>
+        </ul>
+        <ul>
+          <li><b>Viaggia per stagione</b></li>
+          <li>Estate</li>
+          <li>Autunno</li>
+          <li>Inverno</li>
+          <li>Primavera</li>
+        </ul>
+      </section>
+    </section>
+
+    <script>
+      const heartIcon = document.querySelector(".fa-heart");
+      const hamburgerIcon = document.getElementById("hamburgerIcon");
+      const toggleBody = document.getElementById("toggleBody");
+      const closeToggle = document.getElementById("closeToggle");
+
+      heartIcon.addEventListener("click", () => {
+        heartIcon.classList.toggle("fas");
+        heartIcon.classList.toggle("far");
+      });
+
+      hamburgerIcon.addEventListener("click", () => {
+        toggleBody.classList.add("active");
+      });
+
+      closeToggle.addEventListener("click", () => {
+        toggleBody.classList.remove("active");
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          toggleBody.classList.remove("active");
+        }
+      });
+      const dropdownLinks = document.querySelectorAll(
+        ".navbar-menu .dropdown > a"
+      );
+
+      dropdownLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const dropdownMenu = this.nextElementSibling;
+
+          // Chiudi tutti gli altri dropdown
+          document
+            .querySelectorAll(".navbar-menu .dropdown-menu.active")
+            .forEach((menu) => {
+              if (menu !== dropdownMenu) {
+                menu.classList.remove("active");
+              }
+            });
+
+          // Mostra/nascondi il menu cliccato
+          dropdownMenu.classList.toggle("active");
+        });
+      });
+
+      // Chiudi tutti i dropdown se clicchi fuori
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".navbar-menu .dropdown")) {
+          document
+            .querySelectorAll(".navbar-menu .dropdown-menu.active")
+            .forEach((menu) => {
+              menu.classList.remove("active");
+            });
+        }
+      });
+    </script>
+
+>>>>>>> 496c91db657ef96773ae16fe583890ceac091a34
     <!--SEARCH BAR-->
     <div class="search-container">
       <h2 class="search-title">CERCA IL TUO ITINERARIO</h2>
@@ -162,9 +364,9 @@
 
     <!--CONTENT WITH CARDS-->
     <section class="inspiration">
-      <h2>Lasciati ispirare!</h2>
       <div class="hero-image">
         <img src="immagini/hotairbaloon.jpg" alt="Mongolfiere al tramonto" />
+        <h2>Lasciati ispirare!</h2>
       </div>
       <div class="cards">
         <div class="card">
@@ -198,51 +400,82 @@
     </section>
 
     <!--RECENSIONI-->
-    <header>
-      <h1>Recensioni dei Nostri Viaggiatori</h1>
-    </header>
-
-    <div class="container">
-      <div class="review">
-        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-        <div class="review-text">
-          “Abbiamo visitato l'Islanda con il pacchetto proposto dal sito e ogni
-          dettaglio era curato alla perfezione. Paesaggi mozzafiato,
-          organizzazione impeccabile e guide esperte. Consigliatissimo!”
-        </div>
-        <div class="author">— Luca R., Milano</div>
+    <section class="recensioni-section">
+      <h2>Cosa dicono di noi</h2>
+      <div class="wave-container">
+        <svg viewBox="0 0 120 28" preserveAspectRatio="none">
+          <path d="M0 10 Q30 20 60 10 T120 10 V30 H0 Z" fill="#F8B097">
+            <animate
+              attributeName="d"
+              dur="6s"
+              repeatCount="indefinite"
+              values="M0 10 Q30 20 60 10 T120 10 V30 H0 Z;
+                  M0 15 Q30 10 60 15 T120 15 V30 H0 Z;
+                  M0 10 Q30 20 60 10 T120 10 V30 H0 Z"
+            />
+          </path>
+        </svg>
       </div>
 
-      <div class="review">
-        <div class="stars">⭐️⭐️⭐️⭐️</div>
-        <div class="review-text">
-          “Prenotazione semplice e veloce. Siamo andati a Bali ed è stato tutto
-          come descritto sul sito. L’assistenza clienti è molto reattiva e
-          disponibile.”
+      <div class="recensioni-container">
+        <div class="recensione-box">
+          <i class="fas fa-user user-icon"></i>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>
+            Abbiamo visitato l'Islanda con il pacchetto proposto dal sito e ogni
+            dettaglio era curato alla perfezione. Paesaggi mozzafiato,
+            organizzazione impeccabile. Consigliatissimo!
+          </p>
+          <div class="author">— Luca R., Milano</div>
         </div>
-        <div class="author">— Chiara M., Roma</div>
-      </div>
 
-      <div class="review">
-        <div class="stars">⭐️⭐️⭐️</div>
-        <div class="review-text">
-          “Il viaggio in Marocco è stato affascinante, ma l’hotel scelto non era
-          all’altezza delle aspettative. Per il resto, trasporti e tour ben
-          organizzati.”
+        <div class="recensione-box">
+          <i class="fas fa-user user-icon"></i>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p>
+            Prenotazione semplice e veloce. Siamo andati a Bali ed è stato tutto
+            come descritto. L’assistenza è ottima.
+          </p>
+          <div class="author">— Chiara M., Roma</div>
         </div>
-        <div class="author">— Giovanni F., Torino</div>
-      </div>
 
-      <div class="review">
-        <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
-        <div class="review-text">
-          “Il nostro tour in Giappone è stato un sogno che si realizza. Tutto è
-          stato perfetto: voli, hotel e itinerari ben strutturati. Torneremo
-          sicuramente a prenotare qui.”
+        <div class="recensione-box">
+          <i class="fas fa-user user-icon"></i>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <p>
+            Il viaggio in Marocco è stato affascinante, ma l’hotel non era
+            all’altezza. Tour e trasporti ben fatti.
+          </p>
+          <div class="author">— Giovanni F., Torino</div>
         </div>
-        <div class="author">— Alessia D., Firenze</div>
+
+        <div class="recensione-box">
+          <i class="fas fa-user user-icon"></i>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>
+            Il nostro tour in Giappone è stato un sogno. Tutto perfetto: voli,
+            hotel, itinerari. Torneremo sicuramente!
+          </p>
+          <div class="author">— Alessia D., Firenze</div>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!--FOOTER-->
     <footer>
