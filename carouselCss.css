@@ -83,7 +83,7 @@
   font-weight: bold;
 }
 
-/* piccola responsive */
+/* responsive*/
 @media (max-width: 520px) {
   .cardCarousel {
     flex: 0 0 240px;
