@@ -259,7 +259,6 @@ body {
     background: transparent;
   }
 }
-
 /*SEARCH BAR*/
 .search-container {
   text-align: center;
@@ -356,26 +355,21 @@ input[type="text"] {
   .search-container {
     padding: 20px 10px;
   }
-
   .search-title {
     font-size: 1.2rem;
   }
-
   .search-bar {
     flex-direction: row;
     padding: 8px 12px;
   }
-
   .search-bar input {
     font-size: 0.9rem;
   }
-
   .search-bar .icon {
     font-size: 1rem;
     margin-right: 8px;
   }
 }
-
 /*CAROSEL*/
 @media only screen and (max-width: 1500px) {
   .carousel {
@@ -457,7 +451,6 @@ input[type="text"] {
     gap: 100px;
   }
 }
-
 /*CONTENT WITH CARDS*/
 h2 {
   text-align: center;
@@ -556,7 +549,6 @@ h2 {
     height: 160px;
   }
 }
-
 @media (max-width: 600px) {
   .card {
     width: 100%;
@@ -572,7 +564,6 @@ h2 {
     font-size: 16px;
   }
 }
-
 /*RECENSIONI*/
 .recensioni-section {
   position: relative;
@@ -605,19 +596,17 @@ h2 {
 .recensioni-container {
   position: relative;
   z-index: 1;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+  max-width: 1200px;
+  margin: 0 auto;
   padding-bottom: 20px;
-  scroll-snap-type: x mandatory;
 }
 .recensione-box {
   background-color: #fff;
   border: 2px solid #f8b097;
   border-radius: 12px;
-  width: 180px;
-  min-width: 180px;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(248, 176, 151, 0.25);
   font-size: 13px;
@@ -626,8 +615,6 @@ h2 {
   flex-direction: column;
   gap: 8px;
   color: #333;
-  flex-shrink: 0;
-  scroll-snap-align: start;
   transition: transform 0.3s ease;
 }
 .recensione-box:hover {
@@ -647,30 +634,22 @@ h2 {
   color: #444;
   margin-top: auto;
 }
-@media (min-width: 768px) {
+@media (max-width: 900px) {
   .recensioni-container {
-    justify-content: center;
-    flex-wrap: wrap;
-    overflow-x: hidden;
-  }
-
-  .recensione-box {
-    flex: 0 0 180px;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (min-width: 1024px) {
+@media (max-width: 600px) {
   .recensioni-container {
-    gap: 20px;
+    grid-template-columns: 1fr;
   }
 }
-
 /*FOOTER*/
 footer {
   background-color: #88b0b5;
   color: black;
   padding: 80px 20px 40px 20px;
 }
-
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -679,27 +658,22 @@ footer {
   max-width: 1100px;
   margin: 0 auto;
 }
-
 .footer-logo img {
   width: 80px; /* dimensione logo */
 }
-
 .footer-section {
   min-width: 180px;
   margin: 10px;
 }
-
 .footer-section h4 {
   margin-bottom: 15px;
   font-size: 16px;
 }
-
 .footer-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .footer-section ul li {
   margin-bottom: 8px;
   font-size: 14px;
@@ -708,31 +682,25 @@ footer {
   margin-bottom: 8px;
   font-size: 14px;
 }
-
 .footer-section a {
   text-decoration: none;
   color: black;
 }
-
 .footer-section a:hover {
   text-decoration: underline;
 }
-
 .social-icons {
   margin-top: 10px;
 }
-
 .social-icons a {
   font-size: 22px;
   margin-right: 15px;
   color: black;
   transition: color 0.3s ease;
 }
-
 .social-icons a:hover {
   color: #444; /* colore hover */
 }
-
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
@@ -743,24 +711,20 @@ footer {
   color: black;
   transition: color 0.3s ease;
 }
-
 .footer-section ul li {
   margin-bottom: 12px;
   font-size: 14px;
   transition: color 0.3s ease;
 }
-
 .footer-section ul li:hover,
 .footer-section a:hover,
 .footer-section p:hover {
   color: #ff6c39;
 }
-
 .footer-section p {
   margin-bottom: 10px;
   transition: color 0.3s ease;
 }
-
 .footer-section a,
 .footer-section ul li,
 .footer-section p {
