@@ -304,24 +304,97 @@
     </script>
 
     <!--CAROSEL-->
-    <h2 class="titleCarousel">I preferiti del web:</h2>
-    <div class="carousel">
-      <div class="cardCarousel van">
-        <div class="card-text">Svizzera in Van</div>
+    <div class="carousel-wrapper">
+      <button class="arrowCarousel left">&#10094;</button>
+
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="cardCarousel van">
+            <div class="card-text">Svizzera in Van</div>
+          </div>
+          <div class="cardCarousel states">
+            <div class="card-text">Stati Uniti</div>
+          </div>
+          <div class="cardCarousel island">
+            <div class="card-text">Islanda</div>
+          </div>
+          <div class="cardCarousel europe">
+            <div class="card-text">Est Europa</div>
+          </div>
+        </div>
       </div>
 
-      <div class="cardCarousel states">
-        <div class="card-text">Stati Uniti</div>
-      </div>
-
-      <div class="cardCarousel island">
-        <div class="card-text">Islanda</div>
-      </div>
-
-      <div class="cardCarousel europe">
-        <div class="card-text">Est Europa</div>
-      </div>
+      <button class="arrowCarousel right">&#10095;</button>
     </div>
+
+    <script>
+      (function () {
+        const carousel = document.querySelector(".carousel");
+        const prevBtn = document.querySelector(".arrowCarousel.left");
+        const nextBtn = document.querySelector(".arrowCarousel.right");
+        const cards = document.querySelectorAll(".cardCarousel");
+
+        if (!carousel || !prevBtn || !nextBtn || cards.length === 0) {
+          console.error("Elementi del carosello mancanti");
+          return;
+        }
+
+        let offset = 0; // translateX corrente (px), valori negativi muovono a sinistra
+        let step = calcStep(); // quanto muovere per click (card width + gap)
+
+        // calcola lo spazio massimo negativo che possiamo traslare
+        function getMaxOffset() {
+          // scrollWidth = larghezza totale del contenuto; parent.offsetWidth = viewport visibile
+          return Math.min(
+            0,
+            carousel.parentElement.offsetWidth - carousel.scrollWidth
+          );
+        }
+
+        function calcStep() {
+          const card = cards[0];
+          const cardW = Math.round(card.getBoundingClientRect().width);
+          const computed = getComputedStyle(carousel);
+          const gap = parseFloat(computed.gap || computed.columnGap || 0) || 0;
+          return Math.round(cardW + gap);
+        }
+
+        function updateButtons() {
+          const max = getMaxOffset();
+          // tolleranza per floating point
+          const eps = 1;
+          prevBtn.disabled = offset >= -eps;
+          nextBtn.disabled = offset <= max + eps;
+        }
+
+        nextBtn.addEventListener("click", () => {
+          const max = getMaxOffset();
+          if (offset - step >= max) offset -= step;
+          else offset = max; // non oltrepassare il massimo
+          carousel.style.transform = `translateX(${offset}px)`;
+          updateButtons();
+        });
+
+        prevBtn.addEventListener("click", () => {
+          if (offset + step <= 0) offset += step;
+          else offset = 0;
+          carousel.style.transform = `translateX(${offset}px)`;
+          updateButtons();
+        });
+
+        // ricalcola al resize
+        window.addEventListener("resize", () => {
+          step = calcStep();
+          offset = 0; // resetta per mantenere la prima card intera
+          carousel.style.transform = `translateX(${offset}px)`;
+          updateButtons();
+        });
+
+        // inizializza
+        step = calcStep();
+        updateButtons();
+      })();
+    </script>
 
     <!--ICON BAR-->
     <div class="icon-list">
