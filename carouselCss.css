@@ -69,6 +69,7 @@
   background-image: url("/immagini/europe.jpg");
 }
 
+/*testo sopra le card*/
 .card-text {
   position: absolute;
   bottom: 0;
