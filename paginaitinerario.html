@@ -16,6 +16,220 @@
     <title>Travel Routes</title>
   </head>
   <body>
+    <!--NAV BAR-->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="#">
+          <img
+            src="immagini/logo-senza-sfondo.png"
+            alt="Logo"
+            class="nav-logo"
+          />
+        </a>
+        <i class="fas fa-bars hamburger" id="hamburgerIcon"></i>
+      </div>
+
+      <ul class="navbar-menu">
+        <li class="dropdown">
+          <a href="#" id="link-destinazioni">Destinazioni</a>
+          <ul class="dropdown-menu">
+            <li>Islanda</li>
+            <li>Stati Uniti</li>
+            <li>Africa</li>
+            <li>Francia</li>
+            <li>Spagna</li>
+            <li>Portogallo</li>
+            <li>Croazia</li>
+            <li>Grecia</li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="link-modo">Modo di viaggiare</a>
+          <ul class="dropdown-menu">
+            <li>Van</li>
+            <li>Camper</li>
+            <li>Moto</li>
+            <li>Macchina</li>
+            <li>Treno</li>
+            <li>A piedi</li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="link-tipo">Tipo di vacanza</a>
+          <ul class="dropdown-menu">
+            <li>In solitaria</li>
+            <li>In gruppo organizzato</li>
+            <li>In gruppo con noi</li>
+            <li>In famiglia</li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="link-stagione">Viaggia per stagione</a>
+          <ul class="dropdown-menu">
+            <li>Estate</li>
+            <li>Autunno</li>
+            <li>Inverno</li>
+            <li>Primavera</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="navbar-icons">
+        <i class="far fa-heart" aria-label="Preferiti"></i>
+
+        <!--FORM LOGIN-->
+        <div class="user-login-container">
+          <i class="far fa-user" id="userIcon" aria-label="Login"></i>
+          <div id="loginDropdown" class="dropdown hidden">
+            <h3>Login</h3>
+            <form>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required />
+
+              <div class="button_group">
+                <button type="submit">Accedi</button>
+                <a href="form_registrazione.html">Registrati</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <script>
+        const userIcon = document.getElementById("userIcon");
+        const loginDropdown = document.getElementById("loginDropdown");
+
+        userIcon.addEventListener("click", (e) => {
+          e.stopPropagation();
+          loginDropdown.classList.toggle("show");
+          if (loginDropdown.classList.contains("show")) {
+            loginDropdown.querySelector("#email").focus();
+          }
+        });
+
+        document.addEventListener("click", () => {
+          loginDropdown.classList.remove("show");
+        });
+      </script>
+    </nav>
+
+    <!-- TOGGLE MENU MOBILE-->
+    <section class="toggle-body" id="toggleBody">
+      <div class="navbar-toggle">
+        <div class="logo-title-toggle">
+          <img
+            class="logo-senza-sfondo"
+            src="immagini/logo-senza-sfondo.png"
+            alt="Logo del sito"
+          />
+          <h3 class="titolo-toggle-menu">Travel Routes</h3>
+        </div>
+        <img
+          class="close-button"
+          id="closeToggle"
+          src="immagini/icona-chiusura.png"
+          alt="close button"
+        />
+      </div>
+
+      <section class="lista-menu">
+        <ul>
+          <li><b>Destinazioni</b></li>
+          <li>Islanda</li>
+          <li>Stati Uniti</li>
+          <li>Africa</li>
+          <li>Francia</li>
+          <li>Spagna</li>
+          <li>Portogallo</li>
+          <li>Croazia</li>
+          <li>Grecia</li>
+        </ul>
+        <ul>
+          <li><b>Modo di viaggiare</b></li>
+          <li>Van</li>
+          <li>Camper</li>
+          <li>Moto</li>
+          <li>Macchina</li>
+          <li>Treno</li>
+          <li>A piedi</li>
+        </ul>
+        <ul>
+          <li><b>Tipo di vacanza</b></li>
+          <li>In solitaria</li>
+          <li>In gruppo organizzato</li>
+          <li>In gruppo con noi</li>
+          <li>In famiglia</li>
+        </ul>
+        <ul>
+          <li><b>Viaggia per stagione</b></li>
+          <li>Estate</li>
+          <li>Autunno</li>
+          <li>Inverno</li>
+          <li>Primavera</li>
+        </ul>
+      </section>
+    </section>
+
+    <script>
+      const heartIcon = document.querySelector(".fa-heart");
+      const hamburgerIcon = document.getElementById("hamburgerIcon");
+      const toggleBody = document.getElementById("toggleBody");
+      const closeToggle = document.getElementById("closeToggle");
+
+      heartIcon.addEventListener("click", () => {
+        heartIcon.classList.toggle("fas");
+        heartIcon.classList.toggle("far");
+      });
+
+      hamburgerIcon.addEventListener("click", () => {
+        toggleBody.classList.add("active");
+      });
+
+      closeToggle.addEventListener("click", () => {
+        toggleBody.classList.remove("active");
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          toggleBody.classList.remove("active");
+        }
+      });
+      const dropdownLinks = document.querySelectorAll(
+        ".navbar-menu .dropdown > a"
+      );
+
+      dropdownLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const dropdownMenu = this.nextElementSibling;
+
+          document
+            .querySelectorAll(".navbar-menu .dropdown-menu.active")
+            .forEach((menu) => {
+              if (menu !== dropdownMenu) {
+                menu.classList.remove("active");
+              }
+            });
+
+          dropdownMenu.classList.toggle("active");
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".navbar-menu .dropdown")) {
+          document
+            .querySelectorAll(".navbar-menu .dropdown-menu.active")
+            .forEach((menu) => {
+              menu.classList.remove("active");
+            });
+        }
+      });
+    </script>
+
+    <!--PAGINA ITINERARIO-->
     <header class="hero">
       <img src="immagini/itinerarioamalfi.jpg" alt="Costiera Amalfitana" />
     </header>
@@ -277,5 +491,52 @@
         }
       });
     </script>
+
+    <!--FOOTER-->
+    <footer>
+      <div class="footer-container">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <img src="/immagini/logo-senza-sfondo.png" alt="Logo" />
+        </div>
+
+        <!-- Itinerari -->
+        <div class="footer-section">
+          <h4>Itinerari</h4>
+          <ul>
+            <li>Destinazioni</li>
+            <li>Modo di viaggiare</li>
+            <li>Tipo di vacanza</li>
+            <li>Viaggia per stagione</li>
+          </ul>
+        </div>
+
+        <!-- Contatti -->
+        <div class="footer-section">
+          <h4>Contattaci</h4>
+          <p>travelroutes@gmail.com</p>
+          <p>+39 333 48 77 951</p>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Supporto -->
+        <div class="footer-section">
+          <h4>Supporto</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Termini e condizioni</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Assicurazione di viaggio</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>@Copyright 2025</p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -252,11 +252,11 @@ body {
     color: black;
   }
   .navbar-icons {
-    position: fixed;
-    top: 16px;
+    position: absolute;
+    top: 50%;
     right: 24px;
-    z-index: 1100;
-    background: transparent;
+    transform: translateY(-50%);
+    z-index: 1000;
   }
 }
 
@@ -335,7 +335,6 @@ body {
   border: none;
   outline: none;
   font-size: 1rem;
-  color: grey;
   background-color: #f8b097;
   border-radius: 20px;
   margin-left: 20px;
@@ -345,9 +344,10 @@ input[type="text"] {
   outline: none;
   background-color: #f8b097;
   font-size: 20px;
+  color: white;
+
   font-weight: bold;
   flex: 1;
-  color: grey;
   width: 700px;
   border-radius: 20px;
   margin-left: 20px;
@@ -698,12 +698,24 @@ h2 {
     gap: 20px;
   }
 }
+@media (max-width: 768px) {
+  .recensione-box {
+    min-width: 90%;
+    width: 90%;
+    margin: 0 auto;
+    scroll-snap-align: center;
+  }
 
+  .recensioni-container {
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 10%;
+  }
+}
 /*FOOTER*/
 footer {
   background-color: #88b0b5;
   color: black;
-  padding: 80px 20px 40px 20px; /*aumento spazio verticale */
+  padding: 80px 20px 40px 20px;
 }
 .footer-container {
   display: flex;
@@ -774,4 +786,11 @@ footer {
 .footer-section ul li,
 .footer-section p {
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .footer-logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }
